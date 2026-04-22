@@ -1,157 +1,845 @@
-<!DOCTYPE html>
+@<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI 게임 빌더 - 60일 픽셀아트 디펜스 완성</title>
+  <title>AI 게임 빌더 — 2달 완성 픽셀아트 디펜스 게임 클래스</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Pretendard:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="course_style.css">
-  <meta name="description" content="코딩, 디자인을 몰라도 AI와 함께 60일 만에 퀄리티 높은 픽셀 아트 디펜스 게임을 만들어보세요.">
+  <meta name="description" content="코딩·디자인 경험이 없어도 AI와 함께 2달 만에 나만의 픽셀 아트 디펜스 게임을 완성하세요. 프로그래머·기획·원화·입시 파트별 맞춤 로드맵 제공.">
 </head>
 <body>
 
+  <!-- Floating Background Blobs -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
   <!-- 헤더 -->
-  <header>
-    <div class="logo">AI Game<span>Builder</span></div>
+  <header class="glass-header">
+    <div class="nav-container">
+      <a href="#home" class="logo">
+        <i class='bx bxs-game'></i>
+        AI Game<span>Builder</span>
+      </a>
+    </div>
   </header>
 
-  <!-- 메인 히어로 섹션 -->
-  <section class="hero">
+  <!-- ═══════════════════════════════════════ -->
+  <!-- 히어로 섹션 -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="hero" id="home">
     <div class="hero-bg">
       <img src="./images/hero_pixel_banner_1775617394719.png" alt="Fantasy Forest Pixel Art Banner">
     </div>
-    
     <div class="hero-content">
-      <span class="tagline">VIBE CODING CLASS</span>
-      <h1>상상 속의 게임, <br>AI가 현실로 만듭니다</h1>
-      <p>코딩과 디자인의 장벽에 부딪혔나요? <br>Stable Diffusion과 Cursor AI를 활용하여 단 60일 만에 나만의 '픽셀 아트 디펜스 게임'을 완성하세요.</p>
-      <button class="cta-main" onclick="document.getElementById('focus-section').scrollIntoView({behavior: 'smooth'})">지금 여정 시작하기</button>
+      <span class="badge">VIBE CODING CLASS ✨</span>
+      <h1>
+        이제 게임 개발,<br>
+        <span class="gradient-text">누구나 할 수 있습니다.</span>
+      </h1>
+      <p>Unity와 AI 도구(Cursor, Stable Diffusion)를 활용해 <strong>2달, 총 20회 수업</strong> 동안<br>나만의 '픽셀 아트 디펜스 게임' 한 편의 완성을 목표로 합니다.<br>기획부터 WebGL 배포까지, 게임 개발의 전 과정을 직접 경험합니다.</p>
+      
+      <div class="course-meta">
+        <div class="meta-item">
+          <i class='bx bx-calendar'></i>
+          <div><strong>2달 과정</strong><span>월 10일 수업</span></div>
+        </div>
+        <div class="meta-item">
+          <i class='bx bx-time-five'></i>
+          <div><strong>회당 2시간</strong><span>총 40시간</span></div>
+        </div>
+        <div class="meta-item">
+          <i class='bx bx-rocket'></i>
+          <div><strong>게임 1편 완성 목표</strong><span>WebGL 배포까지</span></div>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <button class="cyber-btn" onclick="document.getElementById('stats').scrollIntoView({behavior: 'smooth'})">
+          지금 여정 시작하기 <i class='bx bx-right-arrow-alt'></i>
+        </button>
+      </div>
+    </div>
+
+    <a href="#stats" class="scroll-indicator" aria-label="스크롤 다운">
+      <span>SCROLL</span>
+      <i class='bx bx-chevron-down'></i>
+    </a>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- 스탯 섹션 (수업 핵심 숫자) -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="stats-section" id="stats">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">2<span class="stat-unit">달</span></div>
+        <div class="stat-label">완주 과정</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">20<span class="stat-unit">회</span></div>
+        <div class="stat-label">집중 수업</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">40<span class="stat-unit">시간</span></div>
+        <div class="stat-label">실전 실습</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">1<span class="stat-unit">편</span></div>
+        <div class="stat-label">완성 · 배포</div>
+      </div>
     </div>
   </section>
 
-  <!-- 특징 / 쇼케이스 섹션 -->
-  <section class="focus-snippets" id="focus-section">
-    
-    <div class="snippet-card">
-      <img src="./images/unit_warrior_1775617409690.png" alt="Warrior Unit Sprite">
+  <!-- ═══════════════════════════════════════ -->
+  <!-- 핵심 기능 쇼케이스 (기존의 이미지 스니펫 복구) -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="focus-snippets" style="margin-top: 4rem;">
+    <div class="snippet-card glass-card">
+      <img src="./images/unit_warrior_1775617409690.png" alt="Warrior Unit Sprite" class="showcase-icon">
       <h3>자급자족 픽셀 아트</h3>
-      <p>리소스를 구매하지 마세요. SD 프롬프트만으로 나만의 개성 넘치는 노란 머리 수호전사, 픽셀 맵 등을 무한정 뽑아냅니다.</p>
+      <p>리소스를 구매하지 마세요. SD 프롬프트만으로 나만의 개성 넘치는 수호전사, 픽셀 맵 등을 무한정 뽑아냅니다.</p>
     </div>
-
-    <div class="snippet-card">
-      <img src="./images/enemy_goblin_1775617425778.png" alt="Goblin Enemy Sprite">
+    <div class="snippet-card glass-card">
+      <img src="./images/enemy_goblin_1775617425778.png" alt="Goblin Enemy Sprite" class="showcase-icon">
       <h3>바이브 코딩의 힘</h3>
-      <p>"전사가 주변의 고블린에게 공격하게 해줘." 프롬프트 하나면 복잡한 유니티 로직도 AI가 척척 구현합니다. 코딩 한 줄 몰라도 괜찮습니다.</p>
+      <p>"전사가 주변의 고블린에게 공격하게 해줘." 프롬프트 하나면 유니티 로직도 AI가 구현합니다. 코딩 한 줄 몰라도 괜찮습니다.</p>
     </div>
-
   </section>
 
-  <!-- 커리큘럼 아웃라인 -->
-  <section class="curriculum">
-    <h2 class="section-title">60일 커리큘럼 <span>핵심 하이라이트</span></h2>
+  <!-- ═══════════════════════════════════════ -->
+  <!-- 컨텍스트 & 쇼케이스 (업계 정보 및 AI 역할) -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="focus-snippets context-section" id="context" style="margin-top: 4rem;">
+    <div class="snippet-card glass-card">
+      <h3 style="margin-bottom: 1rem;"><i class='bx bx-briefcase'></i> 왜 '완성된 게임'인가</h3>
+      <p style="text-align: left; opacity: 0.9;">최근 게임업계는 실무에 바로 투입될 수 있는 역량을 갖춘 인재를 선호하는 추세입니다. 많은 채용 담당자들이 단순한 문서나 튜토리얼을 넘어, <strong>실제로 동작하는 게임과 코드, 그 해결 과정을 설명할 수 있는 프로젝트 경험</strong>을 통해 지원자의 실무 적응력을 가늠하곤 합니다.<br><br>수업에서 만든 결과물이 취업과 입시를 무조건 보장하는 '정답'은 아닐 수 있습니다. 하지만 치열한 경쟁 속에서 "저는 작은 규모라도 끝까지 완성해 본 경험이 있습니다"라고 자신 있게 증명할 수 있는 <strong>실질적이고 든든한 포트폴리오 기반</strong>이 되어줄 것입니다.</p>
+    </div>
+    <div class="snippet-card glass-card">
+      <h3 style="margin-bottom: 1rem;"><i class='bx bx-bot'></i> AI 도구 — 왜, 어디까지</h3>
+      <p style="text-align: left; opacity: 0.9;">수많은 현업 게임 스튜디오들이 이미 AI를 적극 활용 중이며, 이제 AI는 선택이 아닌 필수 생산성 도구로 자리 잡았습니다. 이 수업에서는 코딩에 Cursor AI, 픽셀 아트에 Stable Diffusion을 활용합니다.<br><br>단, AI가 모든 것을 대신해 주지는 않습니다. AI는 반복 작업을 줄여주는 보조 도구이며, <strong>게임 구조를 설계하고 결과물을 판단·조합하여 하나의 게임으로 완성해 내는 핵심 역량</strong>은 여러분이 직접 다질 수 있도록 훈련합니다.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- 파트별 셀링 포인트 (탭 UI) -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="benefits-section" id="benefits">
+    <div class="section-header">
+      <div class="section-number" data-num="01">Role-Based</div>
+      <h2 class="gradient-text">이 수업이 당신에게 주는 것</h2>
+      <p>각 파트에 맞는 실질적인 이점을 확인하세요. 탭을 눌러 자세히 살펴보세요.</p>
+    </div>
+
+    <!-- 탭 버튼 -->
+    <div class="role-tabs">
+      <button class="tab-btn active" data-target="tab-programmer" data-color="accent">
+        <i class='bx bx-code-curly'></i> 프로그래머
+      </button>
+      <button class="tab-btn" data-target="tab-planner" data-color="secondary">
+        <i class='bx bx-bulb'></i> 기획자
+      </button>
+      <button class="tab-btn" data-target="tab-artist" data-color="primary">
+        <i class='bx bx-palette'></i> 원화 아티스트
+      </button>
+      <button class="tab-btn" data-target="tab-admission" data-color="green">
+        <i class='bx bxs-graduation'></i> 입시 준비생
+      </button>
+    </div>
+
+    <!-- ── 프로그래머 탭 ── -->
+    <div class="tab-content active" id="tab-programmer">
+      <div class="tab-hero-banner" style="border-color: var(--accent);">
+        <div class="tab-hero-icon"><i class='bx bx-code-curly' style="color: var(--accent);"></i></div>
+        <h3>AI를 <span style="color: var(--accent);">도구로 다루는</span> Unity 프로그래머</h3>
+        <p class="tab-subtitle">튜토리얼 클론이 아닌, <strong style="color:#fff;">자체 기획·구현·배포까지 완주한 프로젝트</strong>가 포트폴리오의 시작점입니다.</p>
+      </div>
+
+      <!-- 비교 블록 -->
+      <div class="comparison-block" style="margin-bottom: 2.5rem;">
+        <h4 style="font-size: 1.2rem; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem;">
+          <i class='bx bx-transfer-alt' style="color: var(--accent); font-size: 1.3rem;"></i>
+          주니어 Unity 지원서 앞에서
+        </h4>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
+          <div style="padding: 1.5rem 1.6rem; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; opacity: 0.85;">
+            <span style="display: inline-block; padding: 0.3rem 0.8rem; background: rgba(255,255,255,0.08); border-radius: 999px; font-size: 0.8rem; color: #ccc; margin-bottom: 1rem; letter-spacing: 0.02em;">일반 지원자</span>
+            <ul style="list-style: none; padding: 0; margin: 0; line-height: 2; font-size: 0.95rem; color: var(--text-muted);">
+              <li>○ 튜토리얼 클론 프로젝트</li>
+              <li>○ 에셋스토어 리소스 혼합</li>
+              <li>○ 에디터 스크린샷만 제출</li>
+              <li>○ "Unity 공부 중입니다"</li>
+            </ul>
+          </div>
+          <div style="padding: 1.5rem 1.6rem; background: rgba(0, 228, 255, 0.06); border: 1.5px solid var(--accent); border-radius: 14px; box-shadow: 0 0 30px rgba(0, 228, 255, 0.1);">
+            <span style="display: inline-block; padding: 0.3rem 0.8rem; background: rgba(0, 228, 255, 0.22); border-radius: 999px; font-size: 0.8rem; color: var(--accent); font-weight: 600; margin-bottom: 1rem; letter-spacing: 0.02em;">이 수업 수강생</span>
+            <ul style="list-style: none; padding: 0; margin: 0; line-height: 2; font-size: 0.95rem; color: var(--text-main);">
+              <li>● <strong>완주한 Unity / C# 프로젝트 1건</strong></li>
+              <li>● AI-assisted 개발 워크플로 체화</li>
+              <li>● WebGL URL + GitHub 공개 저장소</li>
+              <li>● <strong>다음 프로젝트를 이어갈 기반</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-grid">
+        <div class="skill-card" style="--card-accent: var(--accent);">
+          <i class='bx bx-git-merge'></i>
+          <h5>AI 통합 개발 환경</h5>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.85; color: var(--text-muted); font-size: 0.92rem;">
+            <li>▸ Unity + Cursor AI 연동 설정</li>
+            <li>▸ 자연어 → Unity / C# 코드 생성</li>
+            <li>▸ 생성 코드 검증 · 리팩터</li>
+            <li>▸ GitHub 커밋 이력 관리</li>
+          </ul>
+        </div>
+        <div class="skill-card" style="--card-accent: var(--accent);">
+          <i class='bx bx-conversation'></i>
+          <h5>게임 핵심 시스템 구현</h5>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.85; color: var(--text-muted); font-size: 0.92rem;">
+            <li>▸ 타워 배치 · 웨이포인트 경로</li>
+            <li>▸ Raycast 타깃팅 · 오브젝트 풀링</li>
+            <li>▸ 웨이브 모듈 · 스테이트 머신</li>
+            <li>▸ 데미지 · 재화 시스템</li>
+          </ul>
+        </div>
+        <div class="skill-card" style="--card-accent: var(--accent);">
+          <i class='bx bx-image-add'></i>
+          <h5>자체 에셋 파이프라인</h5>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.85; color: var(--text-muted); font-size: 0.92rem;">
+            <li>▸ Stable Diffusion 픽셀 아트 생성</li>
+            <li>▸ Unity 타일맵 · 스프라이트 임포트</li>
+            <li>▸ 에셋스토어 의존 없는 프로젝트</li>
+            <li>▸ 캐릭터 · 배경 · UI 완전 자급</li>
+          </ul>
+        </div>
+        <div class="skill-card" style="--card-accent: var(--accent);">
+          <i class='bx bx-package'></i>
+          <h5>완성 → 배포 사이클</h5>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.85; color: var(--text-muted); font-size: 0.92rem;">
+            <li>▸ 디버깅 · 메모리 · 성능 최적화</li>
+            <li>▸ WebGL 빌드 파이프라인</li>
+            <li>▸ GitHub Pages 배포</li>
+            <li>▸ 공개 URL로 즉시 공유</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="career-block">
+        <h4><i class='bx bx-trending-up'></i> 이 수업이 남기는 것</h4>
+        <div class="career-paths">
+          <div class="career-item" style="grid-column: 1 / -1; flex-direction: column; align-items: flex-start;">
+            <span class="career-tag" style="background: rgba(0, 228, 255, 0.15); color: var(--accent);">주니어 Unity 프로그래머 지원 포트폴리오</span>
+            <ul style="list-style: none; padding: 0; margin: 0.8rem 0 0 0; line-height: 2; color: var(--text-main); font-size: 0.98rem; width: 100%;">
+              <li><strong>▸ GitHub 공개 저장소</strong> — 커밋 이력 · 코드 품질 증빙</li>
+              <li><strong>▸ WebGL 빌드 URL</strong> — 면접관 즉시 플레이 가능</li>
+              <li><strong>▸ 완성 + 배포 경험</strong> — 튜토리얼 클론과 차별화</li>
+              <li><strong>▸ AI 코드 검증 역량</strong> — 실무 표준화 중인 스킬</li>
+            </ul>
+          </div>
+          <div class="career-item" style="grid-column: 1 / -1; flex-direction: column; align-items: flex-start; margin-top: 0.8rem;">
+            <span class="career-tag" style="background: rgba(0, 228, 255, 0.15); color: var(--accent);">수업 이후 · 자신의 다음 프로젝트</span>
+            <ul style="list-style: none; padding: 0; margin: 0.8rem 0 0 0; line-height: 2; color: var(--text-main); font-size: 0.98rem; width: 100%;">
+              <li><strong>▸ 동일 워크플로 재사용</strong> — Unity + Cursor + SD + GitHub 환경 그대로</li>
+              <li><strong>▸ 자신의 기획으로 구현</strong> — 수업 프로젝트를 기반으로 장르 확장 · 신규 제작</li>
+              <li><strong>▸ AI와 자가 학습하는 감각</strong> — 막히는 부분을 AI와 함께 푸는 루틴 체득</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 기획자 탭 ── -->
+    <div class="tab-content" id="tab-planner">
+      <div class="tab-hero-banner" style="border-color: var(--secondary);">
+        <div class="tab-hero-icon"><i class='bx bx-bulb' style="color: var(--secondary);"></i></div>
+        <h3>기획 의도를 <span style="color: var(--secondary);">직접 플레이시키는</span> 기획자</h3>
+        <p class="tab-subtitle">PDF 기획서가 아닌, <strong style="color:#fff;">링크 한 번 클릭으로 면접관이 체험하는 프로토타입</strong>이 필요합니다.</p>
+      </div>
+
+      <!-- 비교 블록 -->
+      <div class="comparison-block" style="margin-bottom: 2.5rem;">
+        <h4 style="font-size: 1.2rem; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem;">
+          <i class='bx bx-transfer-alt' style="color: var(--secondary); font-size: 1.3rem;"></i>
+          기획 포트폴리오 검토 3분 내
+        </h4>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
+          <div style="padding: 1.5rem 1.6rem; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; opacity: 0.85;">
+            <span style="display: inline-block; padding: 0.3rem 0.8rem; background: rgba(255,255,255,0.08); border-radius: 999px; font-size: 0.8rem; color: #ccc; margin-bottom: 1rem; letter-spacing: 0.02em;">일반 지원자</span>
+            <ul style="list-style: none; padding: 0; margin: 0; line-height: 2; font-size: 0.95rem; color: var(--text-muted);">
+              <li>○ GDD PDF 문서</li>
+              <li>○ PPT 기획안</li>
+              <li>○ 레벨 디자인 이미지</li>
+              <li>○ "이런 게임을 기획하고 싶습니다"</li>
+            </ul>
+          </div>
+          <div style="padding: 1.5rem 1.6rem; background: rgba(255, 177, 0, 0.08); border: 1.5px solid var(--secondary); border-radius: 14px; box-shadow: 0 0 30px rgba(255, 177, 0, 0.1);">
+            <span style="display: inline-block; padding: 0.3rem 0.8rem; background: rgba(255, 177, 0, 0.25); border-radius: 999px; font-size: 0.8rem; color: var(--secondary); font-weight: 600; margin-bottom: 1rem; letter-spacing: 0.02em;">이 수업 수강생</span>
+            <ul style="list-style: none; padding: 0; margin: 0; line-height: 2; font-size: 0.95rem; color: var(--text-main);">
+              <li>● <strong>플레이 가능한 디펜스 게임 빌드</strong></li>
+              <li>● 웨이브 밸런스 수치 데이터</li>
+              <li>● 테스트-수정 이력 문서</li>
+              <li>● <strong>다음 기획을 빠르게 프로토타이핑할 감각</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-grid">
+        <div class="skill-card" style="--card-accent: var(--secondary);">
+          <i class='bx bx-joystick'></i>
+          <h5>플레이어블 프로토타입</h5>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.85; color: var(--text-muted); font-size: 0.92rem;">
+            <li>▸ Unity 에디터 내 직접 조정</li>
+            <li>▸ 파라미터 → 플레이 → 수정 반복</li>
+            <li>▸ 동작하는 GDD 증빙</li>
+            <li>▸ 1인 프로토타이핑 역량</li>
+          </ul>
+        </div>
+        <div class="skill-card" style="--card-accent: var(--secondary);">
+          <i class='bx bx-slider-alt'></i>
+          <h5>시스템 밸런스 설계</h5>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.85; color: var(--text-muted); font-size: 0.92rem;">
+            <li>▸ 웨이브 난이도 곡선 수치화</li>
+            <li>▸ 골드 드롭 · 가격 밸런싱</li>
+            <li>▸ 재화 → 구매 → 재투자 루프</li>
+            <li>▸ 체감 난이도 테스트 이력</li>
+          </ul>
+        </div>
+        <div class="skill-card" style="--card-accent: var(--secondary);">
+          <i class='bx bx-message-dots'></i>
+          <h5>크로스 직군 소양</h5>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.85; color: var(--text-muted); font-size: 0.92rem;">
+            <li>▸ Unity 엔진 기본 용어 습득</li>
+            <li>▸ 프로그래머 · 아티스트 작업 이해</li>
+            <li>▸ 구현 난이도 추정 감각</li>
+            <li>▸ 협업 시 동일 언어 사용</li>
+          </ul>
+        </div>
+        <div class="skill-card" style="--card-accent: var(--secondary);">
+          <i class='bx bx-globe'></i>
+          <h5>시연 가능 빌드</h5>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.85; color: var(--text-muted); font-size: 0.92rem;">
+            <li>▸ WebGL 즉시 플레이 URL</li>
+            <li>▸ 모바일 · PC 양쪽 대응</li>
+            <li>▸ 면접 자리에서 바로 공유</li>
+            <li>▸ 별도 설치 · 실행 과정 無</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="career-block">
+        <h4><i class='bx bx-trending-up'></i> 포트폴리오 활용</h4>
+        <div class="career-paths">
+          <div class="career-item" style="grid-column: 1 / -1; flex-direction: column; align-items: flex-start;">
+            <span class="career-tag" style="background: rgba(255, 177, 0, 0.15); color: var(--secondary);">기획자 · 게임 디자이너 지원</span>
+            <ul style="list-style: none; padding: 0; margin: 0.8rem 0 0 0; line-height: 2; color: var(--text-main); font-size: 0.98rem; width: 100%;">
+              <li><strong>▸ 플레이 가능한 링크</strong> — 검토 시간 단축 · 설명 부담 감소</li>
+              <li><strong>▸ 기획서 + 동작 빌드 조합</strong> — 드문 포트폴리오 포맷</li>
+              <li><strong>▸ Unity 경험</strong> — 기획 포지션 우대 요건 증가 추세</li>
+              <li><strong>▸ AI 프로토타이핑 경험</strong> — 현업 반복 속도의 핵심</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 원화 아티스트 탭 ── -->
+    <div class="tab-content" id="tab-artist">
+      <div class="tab-hero-banner" style="border-color: var(--primary);">
+        <div class="tab-hero-icon"><i class='bx bx-palette' style="color: var(--primary);"></i></div>
+        <h3>엔진 안에서 <span style="color: var(--primary);">동작하는 그림</span>을 가진 아티스트</h3>
+        <p class="tab-subtitle">정적 일러스트 PDF가 아닌, <strong style="color:#fff;">실제 게임 안에서 움직이는 자신의 아트</strong>가 필요합니다.</p>
+      </div>
+
+      <!-- 비교 블록 -->
+      <div class="comparison-block" style="margin-bottom: 2.5rem;">
+        <h4 style="font-size: 1.2rem; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem;">
+          <i class='bx bx-transfer-alt' style="color: var(--primary); font-size: 1.3rem;"></i>
+          원화 · 아트 포트폴리오의 두 갈래
+        </h4>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
+          <div style="padding: 1.5rem 1.6rem; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; opacity: 0.85;">
+            <span style="display: inline-block; padding: 0.3rem 0.8rem; background: rgba(255,255,255,0.08); border-radius: 999px; font-size: 0.8rem; color: #ccc; margin-bottom: 1rem; letter-spacing: 0.02em;">일반 원화 지원자</span>
+            <ul style="list-style: none; padding: 0; margin: 0; line-height: 2; font-size: 0.95rem; color: var(--text-muted);">
+              <li>○ 일러스트 포트폴리오 PDF</li>
+              <li>○ 캐릭터 시트 정적 이미지</li>
+              <li>○ ArtStation · Instagram 모음</li>
+              <li>○ "엔진에선 이럴 것 같아요"</li>
+            </ul>
+          </div>
+          <div style="padding: 1.5rem 1.6rem; background: rgba(255, 75, 145, 0.08); border: 1.5px solid var(--primary); border-radius: 14px; box-shadow: 0 0 30px rgba(255, 75, 145, 0.1);">
+            <span style="display: inline-block; padding: 0.3rem 0.8rem; background: rgba(255, 75, 145, 0.25); border-radius: 999px; font-size: 0.8rem; color: var(--primary); font-weight: 600; margin-bottom: 1rem; letter-spacing: 0.02em;">이 수업 수강생</span>
+            <ul style="list-style: none; padding: 0; margin: 0; line-height: 2; font-size: 0.95rem; color: var(--text-main);">
+              <li>● <strong>Unity에 적용된 아트 에셋</strong></li>
+              <li>● 움직이는 캐릭터 스프라이트</li>
+              <li>● 타일맵에 배치된 환경 아트</li>
+              <li>● <strong>"엔진에서 이렇게 동작합니다"</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-grid">
+        <div class="skill-card" style="--card-accent: var(--primary);">
+          <i class='bx bx-image-add'></i>
+          <h5>SD 픽셀 아트 워크플로</h5>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.85; color: var(--text-muted); font-size: 0.92rem;">
+            <li>▸ 프롬프트 엔지니어링</li>
+            <li>▸ 콘셉트 → 러프 → 최종 파이프라인</li>
+            <li>▸ 픽셀 스타일 일관성 유지</li>
+            <li>▸ 무제한 에셋 생성 가능</li>
+          </ul>
+        </div>
+        <div class="skill-card" style="--card-accent: var(--primary);">
+          <i class='bx bx-wrench'></i>
+          <h5>엔진 임포트 실습</h5>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.85; color: var(--text-muted); font-size: 0.92rem;">
+            <li>▸ Unity 타일맵 설정</li>
+            <li>▸ 스프라이트 시트 · 애니메이션 분리</li>
+            <li>▸ UI 에셋 슬라이싱</li>
+            <li>▸ 머티리얼 · 필터 설정</li>
+          </ul>
+        </div>
+        <div class="skill-card" style="--card-accent: var(--primary);">
+          <i class='bx bx-git-branch'></i>
+          <h5>AI 후가공 프로세스</h5>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.85; color: var(--text-muted); font-size: 0.92rem;">
+            <li>▸ AI 러프 → 수작업 리파인</li>
+            <li>▸ 색상 팔레트 정규화</li>
+            <li>▸ 픽셀 정렬 · 디테일 보정</li>
+            <li>▸ 상업적 사용 품질까지</li>
+          </ul>
+        </div>
+        <div class="skill-card" style="--card-accent: var(--primary);">
+          <i class='bx bx-joystick'></i>
+          <h5>TA 기초 시야</h5>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.85; color: var(--text-muted); font-size: 0.92rem;">
+            <li>▸ 엔진 내 실제 렌더링 확인</li>
+            <li>▸ 드로우 콜 · 아틀라스 이해</li>
+            <li>▸ 아트-엔진 협업 감각</li>
+            <li>▸ 1인 게임 아트 디렉션</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="career-block">
+        <h4><i class='bx bx-trending-up'></i> 포트폴리오 활용</h4>
+        <div class="career-paths">
+          <div class="career-item" style="grid-column: 1 / -1; flex-direction: column; align-items: flex-start;">
+            <span class="career-tag" style="background: rgba(255, 75, 145, 0.15); color: var(--primary);">원화 · 2D 아티스트 · TA 지원</span>
+            <ul style="list-style: none; padding: 0; margin: 0.8rem 0 0 0; line-height: 2; color: var(--text-main); font-size: 0.98rem; width: 100%;">
+              <li><strong>▸ 인-엔진 포트폴리오</strong> — 정적 일러스트 + 실제 구현 조합</li>
+              <li><strong>▸ AI 활용 능력</strong> — 2026년 스튜디오 요구 스킬</li>
+              <li><strong>▸ TA 진입 수준</strong> — 엔진 파이프라인 이해 증빙</li>
+              <li><strong>▸ 1인 게임 아트 경험</strong> — 인디 · 모바일 스튜디오 선호</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 입시 준비생 탭 ── -->
+    <div class="tab-content" id="tab-admission">
+      <div class="tab-hero-banner" style="border-color: var(--green);">
+        <div class="tab-hero-icon"><i class='bx bxs-graduation' style="color: var(--green);"></i></div>
+        <h3>게임학과 <span style="color: var(--green);">입시를 준비한다면</span></h3>
+        <p class="tab-subtitle"><strong style="color:#fff;">입시는 1년에 한 번.</strong> 이 수업은 8주. 지금 시작하면 마감 전에 <strong style="color:#fff;">완성된 게임 1편</strong>이 포트폴리오에 들어갑니다.</p>
+      </div>
+
+      <div class="benefit-block">
+        <h4><i class='bx bx-error-circle'></i> 8주 뒤, 손에 남는 것</h4>
+        <ul style="list-style: none; padding: 0; margin: 0 0 1.2rem 0; line-height: 2; color: var(--text-main); font-size: 1rem;">
+          <li>■ 완성된 픽셀 아트 디펜스 게임 1편 (WebGL 공개 URL)</li>
+          <li>■ Unity 프로젝트 전체 소스 (GitHub 공개 가능)</li>
+          <li>■ Stable Diffusion으로 직접 만든 픽셀 아트 에셋 세트</li>
+          <li>■ 기획 문서 · 밸런스 수정 이력 · AI 활용 로그</li>
+        </ul>
+        <p style="opacity: 0.9; font-size: 0.98rem;">자기소개서·면접에서 <strong>"게임이 만들고 싶습니다"</strong> 대신 <strong>"이 게임을 만들었습니다"</strong>로 시작할 수 있습니다.</p>
+      </div>
+
+      <!-- 비교 블록: 일반 지원자 vs 이 수업 수강생 -->
+      <div class="comparison-block" style="margin-bottom: 2.5rem;">
+        <h4 style="font-size: 1.2rem; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem;">
+          <i class='bx bx-transfer-alt' style="color: var(--green); font-size: 1.3rem;"></i>
+          면접관 책상 위, 같은 시간에 검토되는 자료
+        </h4>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
+          <div style="padding: 1.5rem 1.6rem; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; opacity: 0.85;">
+            <span style="display: inline-block; padding: 0.3rem 0.8rem; background: rgba(255,255,255,0.08); border-radius: 999px; font-size: 0.8rem; color: #ccc; margin-bottom: 1rem; letter-spacing: 0.02em;">일반 지원자 포트폴리오</span>
+            <ul style="list-style: none; padding: 0; margin: 0; line-height: 2; font-size: 0.95rem; color: var(--text-muted);">
+              <li>○ 콘셉트 스케치 · 일러스트 모음</li>
+              <li>○ 기획서 PDF</li>
+              <li>○ 아이디어 소개 문서</li>
+              <li>○ "게임이 만들고 싶습니다"</li>
+            </ul>
+          </div>
+          <div style="padding: 1.5rem 1.6rem; background: rgba(39, 201, 63, 0.08); border: 1.5px solid var(--green); border-radius: 14px; box-shadow: 0 0 30px rgba(39, 201, 63, 0.08);">
+            <span style="display: inline-block; padding: 0.3rem 0.8rem; background: rgba(39, 201, 63, 0.22); border-radius: 999px; font-size: 0.8rem; color: var(--green); font-weight: 600; margin-bottom: 1rem; letter-spacing: 0.02em;">이 수업 수강생</span>
+            <ul style="list-style: none; padding: 0; margin: 0; line-height: 2; font-size: 0.95rem; color: var(--text-main);">
+              <li>● <strong>플레이 가능한 WebGL 게임 링크</strong></li>
+              <li>● GitHub 공개 코드 · 에셋</li>
+              <li>● 기획서 + 실제 동작하는 시스템</li>
+              <li>● <strong>"이 게임을 만들었습니다"</strong></li>
+            </ul>
+          </div>
+        </div>
+        <p style="margin: 1rem 0 0 0; opacity: 0.7; font-size: 0.88rem; text-align: center;">※ 같은 2~3분의 평가 시간, 전달되는 정보의 밀도 차이</p>
+      </div>
+
+      <div class="skill-grid">
+        <div class="skill-card" style="--card-accent: var(--green);">
+          <i class='bx bx-bulb'></i>
+          <h5>기획 지망</h5>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.85; color: var(--text-muted); font-size: 0.92rem;">
+            <li>▸ 웨이브 난이도 곡선 설계</li>
+            <li>▸ 재화 · 보상 시스템 밸런싱</li>
+            <li>▸ 프로토타입 → 테스트 → 수정 반복 사이클</li>
+            <li>▸ 면접 시 플레이 링크로 기획 의도 증빙</li>
+          </ul>
+        </div>
+        <div class="skill-card" style="--card-accent: var(--green);">
+          <i class='bx bx-code-curly'></i>
+          <h5>프로그래밍 지망</h5>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.85; color: var(--text-muted); font-size: 0.92rem;">
+            <li>▸ Unity / C# 기반 완성 프로젝트 1건</li>
+            <li>▸ Raycast 타깃팅 · 오브젝트 풀링 · 웨이브 모듈화</li>
+            <li>▸ AI 생성 코드 검증 및 디버깅 훈련</li>
+            <li>▸ WebGL 빌드 · 배포 파이프라인 경험</li>
+          </ul>
+        </div>
+        <div class="skill-card" style="--card-accent: var(--green);">
+          <i class='bx bx-palette'></i>
+          <h5>아트 / 그래픽 지망</h5>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.85; color: var(--text-muted); font-size: 0.92rem;">
+            <li>▸ Stable Diffusion 픽셀 아트 생성 워크플로</li>
+            <li>▸ Unity 타일맵 · 스프라이트 · UI 적용 실습</li>
+            <li>▸ AI 러프 → 후가공 · 리파인 프로세스</li>
+            <li>▸ 엔진 내 실제 렌더링 확인 (TA 기초 시야)</li>
+          </ul>
+        </div>
+        <div class="skill-card" style="--card-accent: var(--green);">
+          <i class='bx bx-refresh'></i>
+          <h5>공통 역량</h5>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.85; color: var(--text-muted); font-size: 0.92rem;">
+            <li>▸ 기획 → 제작 → 배포 전 주기 완주 경험</li>
+            <li>▸ 작업 기록(회고록) 작성 훈련</li>
+            <li>▸ Git / GitHub 기반 버전 관리</li>
+            <li>▸ 파트별 적성 자가 진단 자료 확보</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="career-block">
+        <h4><i class='bx bx-trending-up'></i> 포트폴리오 활용</h4>
+        <div class="career-paths">
+          <div class="career-item" style="grid-column: 1 / -1; flex-direction: column; align-items: flex-start;">
+            <span class="career-tag" style="background: rgba(39, 201, 63, 0.15); color: var(--green);">제출 가능한 포트폴리오 구성</span>
+            <ul style="list-style: none; padding: 0; margin: 0.8rem 0 0 0; line-height: 2; color: var(--text-main); font-size: 0.98rem; width: 100%;">
+              <li><strong>▸ WebGL 빌드 URL</strong> — 브라우저 즉시 플레이 가능</li>
+              <li><strong>▸ GitHub 공개 저장소</strong> — 코드 · 에셋 · 커밋 이력 공개</li>
+              <li><strong>▸ 제작 회고 문서</strong> — 기획 의도 · 밸런스 결정 · AI 활용 기준</li>
+              <li><strong>▸ 플레이 영상 · 개발 타임랩스</strong> — 작업 과정 시각 증빙</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- 커리큘럼 섹션 (5단계 압축) -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="curriculum" id="curriculum">
+    <div class="section-header">
+      <div class="section-number" data-num="02">20-Day Roadmap</div>
+      <h2 class="gradient-text">20일 커리큘럼</h2>
+      <p>2달 동안 총 20회, 회당 2시간. 기획-개발-배포 전 과정을 훈련합니다.</p>
+    </div>
     
     <div class="timeline">
-      <div class="step-card">
-        <div class="step-number">01</div>
-        <h4>AI 코파일럿 연동 및 환경 구축</h4>
-        <p>Cursor AI, Antigravity, Stable Diffusion 세팅 및 오리엔테이션. 개발 생산성을 극대화하기 위한 프롬프트 엔지니어링 기초를 다집니다.</p>
+      <div class="step-card glass-card">
+        <div class="step-number gradient-text">01</div>
+        <h4>환경 세팅</h4>
+        <span class="step-days">1~3일차</span>
+        <p>Unity + Cursor AI + SD 도구 통합 및 바이브 코딩 프롬프트 훈련</p>
       </div>
-
-      <div class="step-card">
-        <div class="step-number">02</div>
-        <h4>픽셀 아트 세계 건설</h4>
-        <p>생성형 AI로 숲길, 나무, 흙 등 타일맵을 추출하고 유니티 게임 맵과 몬스터 경로를 디자인합니다.</p>
+      <div class="step-card glass-card">
+        <div class="step-number gradient-text">02</div>
+        <h4>월드 빌딩</h4>
+        <span class="step-days">4~8일차</span>
+        <p>AI로 맵·타일·캐릭터 에셋 생성 및 유니티 내 배치</p>
       </div>
-
-      <div class="step-card">
-        <div class="step-number">03</div>
-        <h4>수호자 & 적 몬스터</h4>
-        <p>전사, 궁수, 마법사와 적 크리처 이미지를 생성 후, 배치 로직과 웨이포인트를 따르는 적군의 인공지능을 구현합니다.</p>
+      <div class="step-card glass-card">
+        <div class="step-number gradient-text">03</div>
+        <h4>전투 시스템</h4>
+        <span class="step-days">9~14일차</span>
+        <p>타워 구출 배치, 적 AI 이동, 전투 로직 구현</p>
       </div>
-
-      <div class="step-card">
-        <div class="step-number">04</div>
-        <h4>본격적인 전투와 보상</h4>
-        <p>유닛의 탐지 및 자동 사격(발사체) 로직, 웨이브 시스템 완성과 몬스터 처치 보상(골드) 등 핵심 디펜스 로직을 엮습니다.</p>
+      <div class="step-card glass-card">
+        <div class="step-number gradient-text">04</div>
+        <h4>경제 & 폴리싱</h4>
+        <span class="step-days">15~18일차</span>
+        <p>재화 시스템, 밸런스 조정, UI/UX 및 사운드 효과 통합</p>
       </div>
-      
-      <div class="step-card">
-        <div class="step-number">05</div>
-        <h4>폴리싱 & 데모 런칭</h4>
-        <p>사운드와 이펙트를 추가해 타격감을 살리고, 발생한 버그를 AI와 디버깅 후 세상에 나의 첫 게임 데모를 배포합니다.</p>
+      <div class="step-card glass-card">
+        <div class="step-number gradient-text">05</div>
+        <h4>빌드 & 배포</h4>
+        <span class="step-days">19~20일차</span>
+        <p>테스트, 시스템 최적화 및 최종 WebGL/PC 기반 배포</p>
       </div>
     </div>
-    
-    <!-- 주차별 상세 커리큘럼 -->
-    <div class="detailed-curriculum">
-      <h3 class="detail-title">전문가를 향한 60일의 여정</h3>
+
+    <!-- 상세 커리큘럼 -->
+    <div class="detailed-curriculum glass-card">
+      <h3 class="detail-title gradient-text">일자별 상세 일정</h3>
       <ul class="detail-list">
         <li class="detail-item">
-          <div class="detail-period">1단계 (1~7일차)</div>
+          <div class="detail-period">1~3일차</div>
           <div class="detail-content">
-            <h5>AI 개발 환경 구축 및 코파일럿 연동</h5>
-            <p>유니티, Cursor AI, Stable Diffusion 툴 체인 설치 및 바이브 코딩(Vibe Coding)을 위한 기초 프롬프트 훈련</p>
+            <h5>AI 개발 환경 구축 및 훈련</h5>
+            <p>유니티, Cursor AI, Stable Diffusion 설치/연동 및 기초 프롬프트 훈련</p>
           </div>
         </li>
         <div class="detail-image-bar">
           <img src="./images/ai_setup_scene_1775618318195.png" alt="AI Developer Setup Workspace">
         </div>
+
         <li class="detail-item">
-          <div class="detail-period">2단계 (8~15일차)</div>
+          <div class="detail-period">4~6일차</div>
           <div class="detail-content">
-            <h5>픽셀 아트 세계 건설 및 타일맵 매핑</h5>
-            <p>SD 모델을 활용한 탑다운 픽셀 아트 맵(흙길, 나무 리소스) 자급자족 생성 및 유니티 환경 기반 경로(웨이포인트) 매핑</p>
+            <h5>픽셀 아트 맵 생성</h5>
+            <p>Stable Diffusion 활용 탑다운 맵(흙길, 나무, 타일) 생성 및 타일맵 적용</p>
           </div>
         </li>
         <li class="detail-item">
-          <div class="detail-period">3단계 (16~25일차)</div>
+          <div class="detail-period">7~8일차</div>
           <div class="detail-content">
-            <h5>아군 수호자 인스턴스 소환과 배치 UI 시스템</h5>
-            <p>전사, 궁수, 마법사 캐릭터 스프라이트 생성, Raycast를 활용한 맵 내 동적 배치 로직 구현 및 상점 UI 연결</p>
+            <h5>캐릭터 스프라이트 & 경로</h5>
+            <p>전사·궁수 등 캐릭터 에셋 생성 및 웨이포인트 경로 시스템 구현</p>
           </div>
         </li>
         <div class="detail-image-bar">
           <img src="./images/game_building_ui_1775617906280.png" alt="Map Building UI Scene">
         </div>
+
         <li class="detail-item">
-          <div class="detail-period">4단계 (26~35일차)</div>
+          <div class="detail-period">9~11일차</div>
           <div class="detail-content">
-            <h5>적 크리처 이동 알고리즘 및 웨이브 제어</h5>
-            <p>고블린 텍스처 적용 적군 경로 추적 순회 알고리즘, 타이머 기반 웨이브 제어(Spawn) 시스템 구축</p>
+            <h5>타워 배치 & 적군 목표 추적</h5>
+            <p>동적 타워 배치 메커니즘과 적군의 목표 탐색(Raycast) 패턴 테스트</p>
           </div>
         </li>
         <li class="detail-item">
-          <div class="detail-period">5단계 (36~45일차)</div>
+          <div class="detail-period">12~14일차</div>
           <div class="detail-content">
-            <h5>오토 타게팅 공격 모듈 및 가상 상대 상태(HP) 관리</h5>
-            <p>최단 거리 적 감지, 원거리 발사체 궤적 연산, 근접 공격 판정 및 객체 간 데미지 연산 처리 로직 완성</p>
+            <h5>전투 로직 구축</h5>
+            <p>최단 거리 타깃팅, 발사체 생성/궤적, 데미지 처리 및 라운드 웨이브 모듈화</p>
           </div>
         </li>
         <div class="detail-image-bar">
           <img src="./images/game_combat_scene_1775617889497.png" alt="Combat Scene in Action">
         </div>
+
         <li class="detail-item">
-          <div class="detail-period">6단계 (46~55일차)</div>
+          <div class="detail-period">15~16일차</div>
           <div class="detail-content">
-            <h5>인게임 재화 시스템 및 라운드 판정 이벤트 핸들링</h5>
-            <p>적 처치 시 골드 획득 및 수호자 가격 차감 등 재화 변동 추적, 라운드 클리어 액션 트리거 구현</p>
+            <h5>경제 및 보상 구조</h5>
+            <p>적군 처치 모상(골드), 상점 구매 로직, 클리어 보상 및 재화 트리거</p>
+          </div>
+        </li>
+        <li class="detail-item">
+          <div class="detail-period">17~18일차</div>
+          <div class="detail-content">
+            <h5>UI/UX 및 씬 전환 추가</h5>
+            <p>체력 UI 점검, 메뉴 전환, 사운드 이펙트(SFX)/BGM 통합 적용</p>
           </div>
         </li>
         <div class="detail-image-bar">
           <img src="./images/game_economy_reward_1775618428447.png" alt="Round Clear and Reward Loot">
         </div>
+
         <li class="detail-item">
-          <div class="detail-period">7단계 (56~60일차)</div>
+          <div class="detail-period">19~20일차</div>
           <div class="detail-content">
-            <h5>엔드 게임 폴리싱 및 WebGL 크로스 플랫폼 빌드</h5>
-            <p>오디오, 이펙트 적용 및 로직 최적화, 최종 플레이 테스트 후 독립 실행형 PC 프로그램 및 웹 데모 버전 배포</p>
+            <h5>테스트, 빌드 및 배포</h5>
+            <p>단위 테스트 점검, 메모리 및 성능 최적화 후 최종 WebGL 빌드/배포</p>
           </div>
         </li>
       </ul>
     </div>
   </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- 공통 FAQ: 망설이는 이유 선제 해소 -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="faq-section" id="faq" style="padding: 4rem 2rem; max-width: 1200px; margin: 3rem auto 0;">
+    <div class="section-header">
+      <div class="section-number" data-num="03">Common Questions</div>
+      <h2 class="gradient-text">망설이는 이유, 먼저 답합니다</h2>
+      <p>수강 전 가장 자주 받는 질문 5가지</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 2.5rem;">
+      <div style="padding: 1.5rem 1.6rem; background: rgba(255,255,255,0.025); border-radius: 14px; border: 1px solid rgba(255,255,255,0.05);">
+        <p style="color: #fff; font-weight: 600; margin: 0 0 0.7rem 0; font-size: 1rem;"><i class='bx bx-question-mark' style="color: var(--accent); margin-right: 0.3rem;"></i>"코딩 한 줄도 못 해요"</p>
+        <p style="color: var(--text-muted); font-size: 0.93rem; line-height: 1.7; margin: 0;">코딩 무경험자 기준으로 설계된 커리큘럼입니다. Cursor AI가 코드를 생성하고, 수강생은 그것을 읽고 수정하는 훈련을 합니다. 필요한 개념은 수업 중 즉시 공급됩니다.</p>
+      </div>
+      <div style="padding: 1.5rem 1.6rem; background: rgba(255,255,255,0.025); border-radius: 14px; border: 1px solid rgba(255,255,255,0.05);">
+        <p style="color: #fff; font-weight: 600; margin: 0 0 0.7rem 0; font-size: 1rem;"><i class='bx bx-question-mark' style="color: var(--accent); margin-right: 0.3rem;"></i>"AI가 다 만들면 저는 뭘 배우죠?"</p>
+        <p style="color: var(--text-muted); font-size: 0.93rem; line-height: 1.7; margin: 0;">AI는 반복 작업을 줄여주는 도구입니다. <strong style="color:#fff;">기획을 구조화하고 AI 결과물을 검증·조합해 하나의 게임으로 완성하는 판단력</strong>이 핵심 역량이며, 이 부분은 AI에 위임되지 않습니다.</p>
+      </div>
+      <div style="padding: 1.5rem 1.6rem; background: rgba(255,255,255,0.025); border-radius: 14px; border: 1px solid rgba(255,255,255,0.05);">
+        <p style="color: #fff; font-weight: 600; margin: 0 0 0.7rem 0; font-size: 1rem;"><i class='bx bx-question-mark' style="color: var(--accent); margin-right: 0.3rem;"></i>"본업 · 학업과 병행 가능한가요?"</p>
+        <p style="color: var(--text-muted); font-size: 0.93rem; line-height: 1.7; margin: 0;">회당 2시간 × 총 20회. 주 2~3회 일정으로 직장 · 학교 · 실기 학원과 병행 가능한 구조입니다.</p>
+      </div>
+      <div style="padding: 1.5rem 1.6rem; background: rgba(255,255,255,0.025); border-radius: 14px; border: 1px solid rgba(255,255,255,0.05);">
+        <p style="color: #fff; font-weight: 600; margin: 0 0 0.7rem 0; font-size: 1rem;"><i class='bx bx-question-mark' style="color: var(--accent); margin-right: 0.3rem;"></i>"중간에 못 따라가면요?"</p>
+        <p style="color: var(--text-muted); font-size: 0.93rem; line-height: 1.7; margin: 0;">20회 전체가 '게임 1편 완성'에서 역산된 커리큘럼입니다. 일자별 진도 체크로 누적 지연을 방지하며, <strong style="color:#fff;">완주 자체가 수업 설계 목적</strong>입니다.</p>
+      </div>
+      <div style="padding: 1.5rem 1.6rem; background: rgba(255,255,255,0.025); border-radius: 14px; border: 1px solid rgba(255,255,255,0.05);">
+        <p style="color: #fff; font-weight: 600; margin: 0 0 0.7rem 0; font-size: 1rem;"><i class='bx bx-question-mark' style="color: var(--accent); margin-right: 0.3rem;"></i>"수업 끝난 뒤에도 혼자 만들 수 있나요?"</p>
+        <p style="color: var(--text-muted); font-size: 0.93rem; line-height: 1.7; margin: 0;"><strong style="color:#fff;">이 수업의 핵심 목표가 그것입니다.</strong> Unity · Cursor · Stable Diffusion · GitHub 개발 환경이 그대로 남고, 수업에서 만든 프로젝트를 기반으로 자신의 기획을 구현하거나 다른 장르 · 팀 프로젝트로 확장할 수 있습니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- 하단 수업 안내 바 -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="info-bar" id="info-bar">
+    <div class="info-bar-inner glass-card">
+      <h3 class="gradient-text">수업 안내</h3>
+      <div class="info-grid">
+        <div class="info-item">
+          <i class='bx bx-calendar-alt'></i>
+          <div>
+            <strong>수업 기간</strong>
+            <span>2달 과정 (한 달에 10일 수업)</span>
+          </div>
+        </div>
+        <div class="info-item">
+          <i class='bx bx-time-five'></i>
+          <div>
+            <strong>수업 시간</strong>
+            <span>회당 2시간 · 총 40시간</span>
+          </div>
+        </div>
+        <div class="info-item">
+          <i class='bx bx-check-shield'></i>
+          <div>
+            <strong>수업 결과물</strong>
+            <span>완성된 디펜스 게임 1편 (WebGL + PC)</span>
+          </div>
+        </div>
+        <div class="info-item">
+          <i class='bx bx-user-check'></i>
+          <div>
+            <strong>대상</strong>
+            <span>코딩 및 개발 경험 무관</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 책임 고지 및 안내 조항 -->
+      <div class="info-disclaimer" style="margin-top: 2rem; padding: 1.5rem; background: rgba(0,0,0,0.2); border-radius: 12px; font-size: 0.95rem; color: #ccc; text-align: left; border: 1px solid rgba(255,255,255,0.05); line-height: 1.6;">
+        <strong style="color: #fff; margin-bottom: 0.5rem; display: inline-block;">⚠️ 수강 전 안내 사항</strong><br>
+        본 과정은 특정한 대학 합격이나 즉각적인 업계 취업을 무조건적으로 보장하는 마법의 코스가 아닙니다. 다만 최근 주니어 채용 및 입시의 핵심 요구 사항인 <strong><span style="color:#fff;">‘처음부터 끝까지 완성된 프로젝트 경험’</span></strong>과 <strong><span style="color:#fff;">‘실제 업계 AI 도구 활용 역량’</span></strong>이라는 명확한 차별화 조건을 달성하여 철저한 실무형 포트폴리오를 준비하는 것을 목적으로 합니다.
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 AI GameBuilder. All rights reserved.</p>
+  </footer>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- 탭 전환 JavaScript -->
+  <!-- ═══════════════════════════════════════ -->
+  <script>
+    // 탭 전환 기능
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        // 모든 탭 버튼과 콘텐츠 비활성화
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        
+        // 클릭된 탭 활성화
+        btn.classList.add('active');
+        const target = document.getElementById(btn.dataset.target);
+        if (target) {
+          target.classList.add('active');
+          // 부드럽게 스크롤
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // 헤더 스크롤 효과
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('.glass-header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // ── 스크롤 리빌 애니메이션 (IntersectionObserver 기반) ──
+    // 스크립트가 body 끝에서 동기 실행되므로 초기 페인트 직전에 reveal 클래스를 붙여 FOUC 방지
+    const revealSelectors = ['.snippet-card', '.stat-item', '.step-card', '.skill-card', '.comparison-block', '.career-item', '.tab-hero-banner', '.detail-item'];
+    revealSelectors.forEach(sel => {
+      document.querySelectorAll(sel).forEach((el, i) => {
+        el.classList.add('reveal');
+        const d = i % 4;
+        if (d > 0) el.classList.add(`reveal-d${d}`);
+      });
+    });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // ── 숫자 카운트업 (Stats 섹션) ──
+    document.querySelectorAll('.stat-number').forEach(numEl => {
+      const textNode = numEl.firstChild;
+      if (!textNode || textNode.nodeType !== Node.TEXT_NODE) return;
+      const target = parseInt(textNode.nodeValue.trim(), 10);
+      if (isNaN(target)) return;
+      numEl.dataset.countTarget = target;
+      textNode.nodeValue = '0';
+    });
+
+    const countUpObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = parseInt(el.dataset.countTarget, 10);
+        const textNode = el.firstChild;
+        let current = 0;
+        const duration = 1200;
+        const step = Math.max(1, Math.ceil(target / (duration / 40)));
+        const timer = setInterval(() => {
+          current += step;
+          if (current >= target) { current = target; clearInterval(timer); }
+          textNode.nodeValue = current;
+        }, 40);
+        countUpObserver.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.stat-number[data-count-target]').forEach(el => countUpObserver.observe(el));
+  </script>
 
 </body>
 </html>
