@@ -14,6 +14,15 @@
 </head>
 <body>
 
+  <!-- Scroll Progress -->
+  <div class="scroll-progress"><div class="scroll-progress-bar" id="scrollProgressBar"></div></div>
+
+  <!-- Cursor Spotlight (desktop only) -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- Film Grain Texture -->
+  <div class="grain-overlay"></div>
+
   <!-- Floating Background Blobs -->
   <div class="blob blob-1"></div>
   <div class="blob blob-2"></div>
@@ -37,14 +46,14 @@
       <img src="./images/hero_pixel_banner_1775617394719.png" alt="Fantasy Forest Pixel Art Banner">
     </div>
     <div class="hero-content">
-      <span class="badge">VIBE CODING CLASS ✨</span>
-      <h1>
+      <span class="badge hero-reveal">VIBE CODING CLASS ✨</span>
+      <h1 class="hero-reveal">
         이제 게임 개발,<br>
         <span class="gradient-text">누구나 할 수 있습니다.</span>
       </h1>
-      <p>Unity와 AI 도구(Cursor, Stable Diffusion)를 활용해 <strong>2달, 총 18일 수업</strong> 동안<br>나만의 '픽셀 아트 디펜스 게임' 한 편의 완성을 목표로 합니다.<br>기획부터 WebGL 배포까지, 게임 개발의 전 과정을 직접 경험합니다.</p>
-      
-      <div class="course-meta">
+      <p class="hero-reveal">Unity와 AI 도구(Cursor, Stable Diffusion)를 활용해 <strong>2달, 총 18일 수업</strong> 동안<br>나만의 '픽셀 아트 디펜스 게임' 한 편의 완성을 목표로 합니다.<br>기획부터 WebGL 배포까지, 게임 개발의 전 과정을 직접 경험합니다.</p>
+
+      <div class="course-meta hero-reveal">
         <div class="meta-item">
           <i class='bx bx-calendar'></i>
           <div><strong>2달 과정</strong><span>월 9일 수업</span></div>
@@ -59,8 +68,8 @@
         </div>
       </div>
 
-      <div class="hero-actions">
-        <button class="cyber-btn" onclick="document.getElementById('stats').scrollIntoView({behavior: 'smooth'})">
+      <div class="hero-actions hero-reveal">
+        <button class="cyber-btn magnetic" onclick="document.getElementById('stats').scrollIntoView({behavior: 'smooth'})">
           지금 여정 시작하기 <i class='bx bx-right-arrow-alt'></i>
         </button>
       </div>
@@ -73,23 +82,43 @@
   </section>
 
   <!-- ═══════════════════════════════════════ -->
+  <!-- 마퀴 티커 (사용 도구 스택) -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span>UNITY</span><span class="dot">✦</span>
+      <span>CURSOR AI</span><span class="dot">✦</span>
+      <span>STABLE DIFFUSION</span><span class="dot">✦</span>
+      <span>GITHUB</span><span class="dot">✦</span>
+      <span>WEBGL</span><span class="dot">✦</span>
+      <span>PIXEL ART</span><span class="dot">✦</span>
+      <span>UNITY</span><span class="dot">✦</span>
+      <span>CURSOR AI</span><span class="dot">✦</span>
+      <span>STABLE DIFFUSION</span><span class="dot">✦</span>
+      <span>GITHUB</span><span class="dot">✦</span>
+      <span>WEBGL</span><span class="dot">✦</span>
+      <span>PIXEL ART</span><span class="dot">✦</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
   <!-- 스탯 섹션 (수업 핵심 숫자) -->
   <!-- ═══════════════════════════════════════ -->
   <section class="stats-section" id="stats">
     <div class="stats-grid">
-      <div class="stat-item">
+      <div class="stat-item spotlight">
         <div class="stat-number">2<span class="stat-unit">달</span></div>
         <div class="stat-label">완주 과정</div>
       </div>
-      <div class="stat-item">
+      <div class="stat-item spotlight">
         <div class="stat-number">18<span class="stat-unit">일</span></div>
         <div class="stat-label">집중 수업</div>
       </div>
-      <div class="stat-item">
+      <div class="stat-item spotlight">
         <div class="stat-number">36<span class="stat-unit">시간</span></div>
         <div class="stat-label">실전 실습</div>
       </div>
-      <div class="stat-item">
+      <div class="stat-item spotlight">
         <div class="stat-number">1<span class="stat-unit">편</span></div>
         <div class="stat-label">완성 · 배포</div>
       </div>
@@ -97,32 +126,26 @@
   </section>
 
   <!-- ═══════════════════════════════════════ -->
-  <!-- 핵심 기능 쇼케이스 (기존의 이미지 스니펫 복구) -->
+  <!-- 벤토 그리드: 핵심 기능 + 컨텍스트 쇼케이스 -->
   <!-- ═══════════════════════════════════════ -->
-  <section class="focus-snippets" style="margin-top: 4rem;">
-    <div class="snippet-card glass-card">
+  <section class="bento-grid" id="context">
+    <div class="bento-item bento-image spotlight">
       <img src="./images/unit_warrior_1775617409690.png" alt="Warrior Unit Sprite" class="showcase-icon">
       <h3>자급자족 픽셀 아트</h3>
       <p>리소스를 구매하지 마세요. SD 프롬프트만으로 나만의 개성 넘치는 수호전사, 픽셀 맵 등을 무한정 뽑아냅니다.</p>
     </div>
-    <div class="snippet-card glass-card">
+    <div class="bento-item bento-image spotlight">
       <img src="./images/enemy_goblin_1775617425778.png" alt="Goblin Enemy Sprite" class="showcase-icon">
       <h3>바이브 코딩의 힘</h3>
       <p>"전사가 주변의 고블린에게 공격하게 해줘." 프롬프트 하나면 유니티 로직도 AI가 구현합니다. 코딩 한 줄 몰라도 괜찮습니다.</p>
     </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════ -->
-  <!-- 컨텍스트 & 쇼케이스 (업계 정보 및 AI 역할) -->
-  <!-- ═══════════════════════════════════════ -->
-  <section class="focus-snippets context-section" id="context" style="margin-top: 4rem;">
-    <div class="snippet-card glass-card">
-      <h3 style="margin-bottom: 1rem;"><i class='bx bx-briefcase'></i> 왜 '완성된 게임'인가</h3>
-      <p style="text-align: left; opacity: 0.9;">최근 게임업계는 실무에 바로 투입될 수 있는 역량을 갖춘 인재를 선호하는 추세입니다. 많은 채용 담당자들이 단순한 문서나 튜토리얼을 넘어, <strong>실제로 동작하는 게임과 코드, 그 해결 과정을 설명할 수 있는 프로젝트 경험</strong>을 통해 지원자의 실무 적응력을 가늠하곤 합니다.<br><br>수업에서 만든 결과물이 취업과 입시를 무조건 보장하는 '정답'은 아닐 수 있습니다. 하지만 치열한 경쟁 속에서 "저는 작은 규모라도 끝까지 완성해 본 경험이 있습니다"라고 자신 있게 증명할 수 있는 <strong>실질적이고 든든한 포트폴리오 기반</strong>이 되어줄 것입니다.</p>
+    <div class="bento-item bento-text spotlight">
+      <h3><i class='bx bx-briefcase'></i> 왜 '완성된 게임'인가</h3>
+      <p>최근 게임업계는 실무에 바로 투입될 수 있는 역량을 갖춘 인재를 선호하는 추세입니다. 많은 채용 담당자들이 단순한 문서나 튜토리얼을 넘어, <strong>실제로 동작하는 게임과 코드, 그 해결 과정을 설명할 수 있는 프로젝트 경험</strong>을 통해 지원자의 실무 적응력을 가늠하곤 합니다.<br><br>수업에서 만든 결과물이 취업과 입시를 무조건 보장하는 '정답'은 아닐 수 있습니다. 하지만 치열한 경쟁 속에서 "저는 작은 규모라도 끝까지 완성해 본 경험이 있습니다"라고 자신 있게 증명할 수 있는 <strong>실질적이고 든든한 포트폴리오 기반</strong>이 되어줄 것입니다.</p>
     </div>
-    <div class="snippet-card glass-card">
-      <h3 style="margin-bottom: 1rem;"><i class='bx bx-bot'></i> AI 도구 — 왜, 어디까지</h3>
-      <p style="text-align: left; opacity: 0.9;">수많은 현업 게임 스튜디오들이 이미 AI를 적극 활용 중이며, 이제 AI는 선택이 아닌 필수 생산성 도구로 자리 잡았습니다. 이 수업에서는 코딩에 Cursor AI, 픽셀 아트에 Stable Diffusion을 활용합니다.<br><br>단, AI가 모든 것을 대신해 주지는 않습니다. AI는 반복 작업을 줄여주는 보조 도구이며, <strong>게임 구조를 설계하고 결과물을 판단·조합하여 하나의 게임으로 완성해 내는 핵심 역량</strong>은 여러분이 직접 다질 수 있도록 훈련합니다.</p>
+    <div class="bento-item bento-text spotlight">
+      <h3><i class='bx bx-bot'></i> AI 도구 — 왜, 어디까지</h3>
+      <p>수많은 현업 게임 스튜디오들이 이미 AI를 적극 활용 중이며, 이제 AI는 선택이 아닌 필수 생산성 도구로 자리 잡았습니다. 이 수업에서는 코딩에 Cursor AI, 픽셀 아트에 Stable Diffusion을 활용합니다.<br><br>단, AI가 모든 것을 대신해 주지는 않습니다. AI는 반복 작업을 줄여주는 보조 도구이며, <strong>게임 구조를 설계하고 결과물을 판단·조합하여 하나의 게임으로 완성해 내는 핵심 역량</strong>은 여러분이 직접 다질 수 있도록 훈련합니다.</p>
     </div>
   </section>
 
@@ -154,7 +177,7 @@
 
     <!-- ── 프로그래머 탭 ── -->
     <div class="tab-content active" id="tab-programmer">
-      <div class="tab-hero-banner" style="border-color: var(--accent);">
+      <div class="tab-hero-banner spotlight" style="border-color: var(--accent);">
         <div class="tab-hero-icon"><i class='bx bx-code-curly' style="color: var(--accent);"></i></div>
         <h3>AI를 <span style="color: var(--accent);">도구로 다루는</span> Unity 프로그래머</h3>
         <p class="tab-subtitle">튜토리얼 클론이 아닌, <strong style="color:#fff;">자체 기획·구현·배포까지 완주한 프로젝트</strong>가 포트폴리오의 시작점입니다.</p>
@@ -189,7 +212,7 @@
       </div>
 
       <div class="skill-grid">
-        <div class="skill-card" style="--card-accent: var(--accent);">
+        <div class="skill-card spotlight" style="--card-accent: var(--accent);">
           <i class='bx bx-git-merge'></i>
           <h5>AI 통합 개발 환경</h5>
           <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.85; color: var(--text-muted); font-size: 0.92rem;">
@@ -199,7 +222,7 @@
             <li>▸ GitHub 커밋 이력 관리</li>
           </ul>
         </div>
-        <div class="skill-card" style="--card-accent: var(--accent);">
+        <div class="skill-card spotlight" style="--card-accent: var(--accent);">
           <i class='bx bx-conversation'></i>
           <h5>게임 핵심 시스템 구현</h5>
           <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.85; color: var(--text-muted); font-size: 0.92rem;">
@@ -209,7 +232,7 @@
             <li>▸ 데미지 · 재화 시스템</li>
           </ul>
         </div>
-        <div class="skill-card" style="--card-accent: var(--accent);">
+        <div class="skill-card spotlight" style="--card-accent: var(--accent);">
           <i class='bx bx-image-add'></i>
           <h5>자체 에셋 파이프라인</h5>
           <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.85; color: var(--text-muted); font-size: 0.92rem;">
@@ -219,7 +242,7 @@
             <li>▸ 캐릭터 · 배경 · UI 완전 자급</li>
           </ul>
         </div>
-        <div class="skill-card" style="--card-accent: var(--accent);">
+        <div class="skill-card spotlight" style="--card-accent: var(--accent);">
           <i class='bx bx-package'></i>
           <h5>완성 → 배포 사이클</h5>
           <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.85; color: var(--text-muted); font-size: 0.92rem;">
@@ -234,7 +257,7 @@
       <div class="career-block">
         <h4><i class='bx bx-trending-up'></i> 이 수업이 남기는 것</h4>
         <div class="career-paths">
-          <div class="career-item" style="grid-column: 1 / -1; flex-direction: column; align-items: flex-start;">
+          <div class="career-item spotlight" style="grid-column: 1 / -1; flex-direction: column; align-items: flex-start;">
             <span class="career-tag" style="background: rgba(0, 228, 255, 0.15); color: var(--accent);">주니어 Unity 프로그래머 지원 포트폴리오</span>
             <ul style="list-style: none; padding: 0; margin: 0.8rem 0 0 0; line-height: 2; color: var(--text-main); font-size: 0.98rem; width: 100%;">
               <li><strong>▸ GitHub 공개 저장소</strong> — 커밋 이력 · 코드 품질 증빙</li>
@@ -243,7 +266,7 @@
               <li><strong>▸ AI 코드 검증 역량</strong> — 실무 표준화 중인 스킬</li>
             </ul>
           </div>
-          <div class="career-item" style="grid-column: 1 / -1; flex-direction: column; align-items: flex-start; margin-top: 0.8rem;">
+          <div class="career-item spotlight" style="grid-column: 1 / -1; flex-direction: column; align-items: flex-start; margin-top: 0.8rem;">
             <span class="career-tag" style="background: rgba(0, 228, 255, 0.15); color: var(--accent);">수업 이후 · 자신의 다음 프로젝트</span>
             <ul style="list-style: none; padding: 0; margin: 0.8rem 0 0 0; line-height: 2; color: var(--text-main); font-size: 0.98rem; width: 100%;">
               <li><strong>▸ 동일 워크플로 재사용</strong> — Unity + Cursor + SD + GitHub 환경 그대로</li>
@@ -257,7 +280,7 @@
 
     <!-- ── 기획자 탭 ── -->
     <div class="tab-content" id="tab-planner">
-      <div class="tab-hero-banner" style="border-color: var(--secondary);">
+      <div class="tab-hero-banner spotlight" style="border-color: var(--secondary);">
         <div class="tab-hero-icon"><i class='bx bx-bulb' style="color: var(--secondary);"></i></div>
         <h3>아이디어를 <span style="color: var(--secondary);">직접 만들어본</span> 기획자</h3>
         <p class="tab-subtitle">기획 의도가 실제 게임으로 구현되는 과정을 경험하면, <strong style="color:#fff;">다른 파트를 이해하는 깊이와 협업 방식이 달라집니다.</strong></p>
@@ -292,7 +315,7 @@
       </div>
 
       <div class="skill-grid">
-        <div class="skill-card" style="--card-accent: var(--secondary);">
+        <div class="skill-card spotlight" style="--card-accent: var(--secondary);">
           <i class='bx bx-joystick'></i>
           <h5>플레이어블 프로토타입</h5>
           <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.85; color: var(--text-muted); font-size: 0.92rem;">
@@ -302,7 +325,7 @@
             <li>▸ 1인 프로토타이핑 역량</li>
           </ul>
         </div>
-        <div class="skill-card" style="--card-accent: var(--secondary);">
+        <div class="skill-card spotlight" style="--card-accent: var(--secondary);">
           <i class='bx bx-slider-alt'></i>
           <h5>시스템 밸런스 설계</h5>
           <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.85; color: var(--text-muted); font-size: 0.92rem;">
@@ -312,7 +335,7 @@
             <li>▸ 체감 난이도 테스트 이력</li>
           </ul>
         </div>
-        <div class="skill-card" style="--card-accent: var(--secondary);">
+        <div class="skill-card spotlight" style="--card-accent: var(--secondary);">
           <i class='bx bx-message-dots'></i>
           <h5>크로스 직군 소양</h5>
           <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.85; color: var(--text-muted); font-size: 0.92rem;">
@@ -322,7 +345,7 @@
             <li>▸ 협업 시 동일 언어 사용</li>
           </ul>
         </div>
-        <div class="skill-card" style="--card-accent: var(--secondary);">
+        <div class="skill-card spotlight" style="--card-accent: var(--secondary);">
           <i class='bx bx-globe'></i>
           <h5>시연 가능 빌드</h5>
           <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.85; color: var(--text-muted); font-size: 0.92rem;">
@@ -337,7 +360,7 @@
       <div class="career-block">
         <h4><i class='bx bx-trending-up'></i> 포트폴리오 활용</h4>
         <div class="career-paths">
-          <div class="career-item" style="grid-column: 1 / -1; flex-direction: column; align-items: flex-start;">
+          <div class="career-item spotlight" style="grid-column: 1 / -1; flex-direction: column; align-items: flex-start;">
             <span class="career-tag" style="background: rgba(255, 177, 0, 0.15); color: var(--secondary);">기획자 · 게임 디자이너 지원</span>
             <ul style="list-style: none; padding: 0; margin: 0.8rem 0 0 0; line-height: 2; color: var(--text-main); font-size: 0.98rem; width: 100%;">
               <li><strong>▸ 플레이 가능한 링크</strong> — 텍스트 기획서만 있는 포트폴리오와 차별화</li>
@@ -352,7 +375,7 @@
 
     <!-- ── 원화 아티스트 탭 ── -->
     <div class="tab-content" id="tab-artist">
-      <div class="tab-hero-banner" style="border-color: var(--primary);">
+      <div class="tab-hero-banner spotlight" style="border-color: var(--primary);">
         <div class="tab-hero-icon"><i class='bx bx-palette' style="color: var(--primary);"></i></div>
         <h3><span style="color: var(--primary);">원화가처럼</span> 생각하고 그리는 아티스트</h3>
         <p class="tab-subtitle">게임 개발 구조를 직접 경험하면, <strong style="color:#fff;">그림의 목적과 쓰임새가 보이기 시작합니다.</strong></p>
@@ -387,7 +410,7 @@
       </div>
 
       <div class="skill-grid">
-        <div class="skill-card" style="--card-accent: var(--primary);">
+        <div class="skill-card spotlight" style="--card-accent: var(--primary);">
           <i class='bx bx-image-add'></i>
           <h5>SD 픽셀 아트 워크플로</h5>
           <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.85; color: var(--text-muted); font-size: 0.92rem;">
@@ -397,7 +420,7 @@
             <li>▸ 무제한 에셋 생성 가능</li>
           </ul>
         </div>
-        <div class="skill-card" style="--card-accent: var(--primary);">
+        <div class="skill-card spotlight" style="--card-accent: var(--primary);">
           <i class='bx bx-wrench'></i>
           <h5>엔진 임포트 실습</h5>
           <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.85; color: var(--text-muted); font-size: 0.92rem;">
@@ -407,7 +430,7 @@
             <li>▸ 머티리얼 · 필터 설정</li>
           </ul>
         </div>
-        <div class="skill-card" style="--card-accent: var(--primary);">
+        <div class="skill-card spotlight" style="--card-accent: var(--primary);">
           <i class='bx bx-git-branch'></i>
           <h5>AI 후가공 프로세스</h5>
           <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.85; color: var(--text-muted); font-size: 0.92rem;">
@@ -417,7 +440,7 @@
             <li>▸ 상업적 사용 품질까지</li>
           </ul>
         </div>
-        <div class="skill-card" style="--card-accent: var(--primary);">
+        <div class="skill-card spotlight" style="--card-accent: var(--primary);">
           <i class='bx bx-joystick'></i>
           <h5>TA 기초 시야</h5>
           <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.85; color: var(--text-muted); font-size: 0.92rem;">
@@ -432,7 +455,7 @@
       <div class="career-block">
         <h4><i class='bx bx-trending-up'></i> 포트폴리오 활용</h4>
         <div class="career-paths">
-          <div class="career-item" style="grid-column: 1 / -1; flex-direction: column; align-items: flex-start;">
+          <div class="career-item spotlight" style="grid-column: 1 / -1; flex-direction: column; align-items: flex-start;">
             <span class="career-tag" style="background: rgba(255, 75, 145, 0.15); color: var(--primary);">원화 · 2D 아티스트 · TA 지원</span>
             <ul style="list-style: none; padding: 0; margin: 0.8rem 0 0 0; line-height: 2; color: var(--text-main); font-size: 0.98rem; width: 100%;">
               <li><strong>▸ 인-엔진 포트폴리오</strong> — 정적 일러스트 + 실제 구현 조합</li>
@@ -447,7 +470,7 @@
 
     <!-- ── 입시 준비생 탭 ── -->
     <div class="tab-content" id="tab-admission">
-      <div class="tab-hero-banner" style="border-color: var(--green);">
+      <div class="tab-hero-banner spotlight" style="border-color: var(--green);">
         <div class="tab-hero-icon"><i class='bx bxs-graduation' style="color: var(--green);"></i></div>
         <h3><span style="color: var(--green);">완성된 게임이 있는</span> 지원자가 됩니다</h3>
         <p class="tab-subtitle">게임을 만들고 싶어서 지원한다는 것을, <strong style="color:#fff;">직접 만든 게임으로 보여주세요.</strong></p>
@@ -494,7 +517,7 @@
       </div>
 
       <div class="skill-grid">
-        <div class="skill-card" style="--card-accent: var(--green);">
+        <div class="skill-card spotlight" style="--card-accent: var(--green);">
           <i class='bx bx-bulb'></i>
           <h5>기획 지망</h5>
           <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.85; color: var(--text-muted); font-size: 0.92rem;">
@@ -504,7 +527,7 @@
             <li>▸ 면접 시 플레이 링크로 기획 의도 증빙</li>
           </ul>
         </div>
-        <div class="skill-card" style="--card-accent: var(--green);">
+        <div class="skill-card spotlight" style="--card-accent: var(--green);">
           <i class='bx bx-code-curly'></i>
           <h5>프로그래밍 지망</h5>
           <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.85; color: var(--text-muted); font-size: 0.92rem;">
@@ -514,7 +537,7 @@
             <li>▸ WebGL 빌드 · 배포 파이프라인 경험</li>
           </ul>
         </div>
-        <div class="skill-card" style="--card-accent: var(--green);">
+        <div class="skill-card spotlight" style="--card-accent: var(--green);">
           <i class='bx bx-palette'></i>
           <h5>아트 / 그래픽 지망</h5>
           <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.85; color: var(--text-muted); font-size: 0.92rem;">
@@ -524,7 +547,7 @@
             <li>▸ 엔진 내 실제 렌더링 확인 (TA 기초 시야)</li>
           </ul>
         </div>
-        <div class="skill-card" style="--card-accent: var(--green);">
+        <div class="skill-card spotlight" style="--card-accent: var(--green);">
           <i class='bx bx-refresh'></i>
           <h5>공통 역량</h5>
           <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.85; color: var(--text-muted); font-size: 0.92rem;">
@@ -539,7 +562,7 @@
       <div class="career-block">
         <h4><i class='bx bx-trending-up'></i> 포트폴리오 활용</h4>
         <div class="career-paths">
-          <div class="career-item" style="grid-column: 1 / -1; flex-direction: column; align-items: flex-start;">
+          <div class="career-item spotlight" style="grid-column: 1 / -1; flex-direction: column; align-items: flex-start;">
             <span class="career-tag" style="background: rgba(39, 201, 63, 0.15); color: var(--green);">제출 가능한 포트폴리오 구성</span>
             <ul style="list-style: none; padding: 0; margin: 0.8rem 0 0 0; line-height: 2; color: var(--text-main); font-size: 0.98rem; width: 100%;">
               <li><strong>▸ WebGL 빌드 URL</strong> — 브라우저 즉시 플레이 가능</li>
@@ -563,36 +586,41 @@
       <p>2달 동안 총 18일, 회당 2시간. 기획-개발-배포 전 과정을 훈련합니다.</p>
     </div>
     
-    <div class="timeline">
-      <div class="step-card glass-card">
-        <div class="step-number gradient-text">01</div>
-        <h4>환경 세팅</h4>
-        <span class="step-days">1~2일차</span>
-        <p>Unity + Cursor AI + SD 도구 통합 및 바이브 코딩 프롬프트 훈련</p>
+    <div class="timeline-wrap" id="timelineWrap">
+      <div class="timeline-track">
+        <div class="timeline-track-fill" id="timelineFill"></div>
       </div>
-      <div class="step-card glass-card">
-        <div class="step-number gradient-text">02</div>
-        <h4>월드 빌딩</h4>
-        <span class="step-days">3~7일차</span>
-        <p>AI로 맵·타일·캐릭터 에셋 생성 및 유니티 내 배치</p>
-      </div>
-      <div class="step-card glass-card">
-        <div class="step-number gradient-text">03</div>
-        <h4>전투 시스템</h4>
-        <span class="step-days">8~12일차</span>
-        <p>타워 구출 배치, 적 AI 이동, 전투 로직 구현</p>
-      </div>
-      <div class="step-card glass-card">
-        <div class="step-number gradient-text">04</div>
-        <h4>경제 & 폴리싱</h4>
-        <span class="step-days">13~16일차</span>
-        <p>재화 시스템, 밸런스 조정, UI/UX 및 사운드 효과 통합</p>
-      </div>
-      <div class="step-card glass-card">
-        <div class="step-number gradient-text">05</div>
-        <h4>빌드 & 배포</h4>
-        <span class="step-days">17~18일차</span>
-        <p>테스트, 시스템 최적화 및 최종 WebGL/PC 기반 배포</p>
+      <div class="timeline">
+        <div class="step-card glass-card">
+          <div class="step-number gradient-text">01</div>
+          <h4>환경 세팅</h4>
+          <span class="step-days">1~2일차</span>
+          <p>Unity + Cursor AI + SD 도구 통합 및 바이브 코딩 프롬프트 훈련</p>
+        </div>
+        <div class="step-card glass-card">
+          <div class="step-number gradient-text">02</div>
+          <h4>월드 빌딩</h4>
+          <span class="step-days">3~7일차</span>
+          <p>AI로 맵·타일·캐릭터 에셋 생성 및 유니티 내 배치</p>
+        </div>
+        <div class="step-card glass-card">
+          <div class="step-number gradient-text">03</div>
+          <h4>전투 시스템</h4>
+          <span class="step-days">8~12일차</span>
+          <p>타워 구출 배치, 적 AI 이동, 전투 로직 구현</p>
+        </div>
+        <div class="step-card glass-card">
+          <div class="step-number gradient-text">04</div>
+          <h4>경제 & 폴리싱</h4>
+          <span class="step-days">13~16일차</span>
+          <p>재화 시스템, 밸런스 조정, UI/UX 및 사운드 효과 통합</p>
+        </div>
+        <div class="step-card glass-card">
+          <div class="step-number gradient-text">05</div>
+          <h4>빌드 & 배포</h4>
+          <span class="step-days">17~18일차</span>
+          <p>테스트, 시스템 최적화 및 최종 WebGL/PC 기반 배포</p>
+        </div>
       </div>
     </div>
 
@@ -607,7 +635,7 @@
             <p>유니티, Cursor AI, Stable Diffusion 설치/연동 및 기초 프롬프트 훈련</p>
           </div>
         </li>
-        <div class="detail-image-bar">
+        <div class="detail-image-bar reveal">
           <img src="./images/ai_setup_scene_1775618318195.png" alt="AI Developer Setup Workspace">
         </div>
 
@@ -625,7 +653,7 @@
             <p>전사·궁수 등 캐릭터 에셋 생성 및 웨이포인트 경로 시스템 구현</p>
           </div>
         </li>
-        <div class="detail-image-bar">
+        <div class="detail-image-bar reveal">
           <img src="./images/game_building_ui_1775617906280.png" alt="Map Building UI Scene">
         </div>
 
@@ -643,7 +671,7 @@
             <p>최단 거리 타깃팅, 발사체 생성/궤적, 데미지 처리 및 라운드 웨이브 모듈화</p>
           </div>
         </li>
-        <div class="detail-image-bar">
+        <div class="detail-image-bar reveal">
           <img src="./images/game_combat_scene_1775617889497.png" alt="Combat Scene in Action">
         </div>
 
@@ -661,7 +689,7 @@
             <p>체력 UI 점검, 메뉴 전환, 사운드 이펙트(SFX)/BGM 통합 적용</p>
           </div>
         </li>
-        <div class="detail-image-bar">
+        <div class="detail-image-bar reveal">
           <img src="./images/game_economy_reward_1775618428447.png" alt="Round Clear and Reward Loot">
         </div>
 
@@ -679,32 +707,67 @@
   <!-- ═══════════════════════════════════════ -->
   <!-- 공통 FAQ: 망설이는 이유 선제 해소 -->
   <!-- ═══════════════════════════════════════ -->
-  <section class="faq-section" id="faq" style="padding: 4rem 2rem; max-width: 1200px; margin: 3rem auto 0;">
+  <section class="faq-section" id="faq">
     <div class="section-header">
       <div class="section-number" data-num="03">Common Questions</div>
       <h2 class="gradient-text">망설이는 이유, 먼저 답합니다</h2>
-      <p>수강 전 가장 자주 받는 질문 5가지</p>
+      <p>수강 전 가장 자주 받는 질문 5가지 · 클릭하면 답변이 펼쳐집니다</p>
     </div>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 2.5rem;">
-      <div style="padding: 1.5rem 1.6rem; background: rgba(255,255,255,0.025); border-radius: 14px; border: 1px solid rgba(255,255,255,0.05);">
-        <p style="color: #fff; font-weight: 600; margin: 0 0 0.7rem 0; font-size: 1rem;"><i class='bx bx-question-mark' style="color: var(--accent); margin-right: 0.3rem;"></i>"코딩 한 줄도 못 해요"</p>
-        <p style="color: var(--text-muted); font-size: 0.93rem; line-height: 1.7; margin: 0;">코딩 무경험자 기준으로 설계된 커리큘럼입니다. Cursor AI가 코드를 생성하고, 수강생은 그것을 읽고 수정하는 훈련을 합니다. 필요한 개념은 수업 중 즉시 공급됩니다.</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span><i class='bx bx-question-mark'></i>"코딩 한 줄도 못 해요"</span>
+          <i class='bx bx-chevron-down faq-icon'></i>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>코딩 무경험자 기준으로 설계된 커리큘럼입니다. Cursor AI가 코드를 생성하고, 수강생은 그것을 읽고 수정하는 훈련을 합니다. 필요한 개념은 수업 중 즉시 공급됩니다.</p>
+          </div>
+        </div>
       </div>
-      <div style="padding: 1.5rem 1.6rem; background: rgba(255,255,255,0.025); border-radius: 14px; border: 1px solid rgba(255,255,255,0.05);">
-        <p style="color: #fff; font-weight: 600; margin: 0 0 0.7rem 0; font-size: 1rem;"><i class='bx bx-question-mark' style="color: var(--accent); margin-right: 0.3rem;"></i>"AI가 다 만들면 저는 뭘 배우죠?"</p>
-        <p style="color: var(--text-muted); font-size: 0.93rem; line-height: 1.7; margin: 0;">AI는 반복 작업을 줄여주는 도구입니다. <strong style="color:#fff;">기획을 구조화하고 AI 결과물을 검증·조합해 하나의 게임으로 완성하는 판단력</strong>이 핵심 역량이며, 이 부분은 AI에 위임되지 않습니다.</p>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span><i class='bx bx-question-mark'></i>"AI가 다 만들면 저는 뭘 배우죠?"</span>
+          <i class='bx bx-chevron-down faq-icon'></i>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>AI는 반복 작업을 줄여주는 도구입니다. <strong>기획을 구조화하고 AI 결과물을 검증·조합해 하나의 게임으로 완성하는 판단력</strong>이 핵심 역량이며, 이 부분은 AI에 위임되지 않습니다.</p>
+          </div>
+        </div>
       </div>
-      <div style="padding: 1.5rem 1.6rem; background: rgba(255,255,255,0.025); border-radius: 14px; border: 1px solid rgba(255,255,255,0.05);">
-        <p style="color: #fff; font-weight: 600; margin: 0 0 0.7rem 0; font-size: 1rem;"><i class='bx bx-question-mark' style="color: var(--accent); margin-right: 0.3rem;"></i>"본업 · 학업과 병행 가능한가요?"</p>
-        <p style="color: var(--text-muted); font-size: 0.93rem; line-height: 1.7; margin: 0;">회당 2시간 × 총 18일. 한 달 9일(주 2~3회) 일정으로 직장 · 학교 · 실기 학원과 병행 가능한 구조입니다.</p>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span><i class='bx bx-question-mark'></i>"본업 · 학업과 병행 가능한가요?"</span>
+          <i class='bx bx-chevron-down faq-icon'></i>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>회당 2시간 × 총 18일. 한 달 9일(주 2~3회) 일정으로 직장 · 학교 · 실기 학원과 병행 가능한 구조입니다.</p>
+          </div>
+        </div>
       </div>
-      <div style="padding: 1.5rem 1.6rem; background: rgba(255,255,255,0.025); border-radius: 14px; border: 1px solid rgba(255,255,255,0.05);">
-        <p style="color: #fff; font-weight: 600; margin: 0 0 0.7rem 0; font-size: 1rem;"><i class='bx bx-question-mark' style="color: var(--accent); margin-right: 0.3rem;"></i>"중간에 못 따라가면요?"</p>
-        <p style="color: var(--text-muted); font-size: 0.93rem; line-height: 1.7; margin: 0;">18일 전체가 '게임 1편 완성'에서 역산된 커리큘럼입니다. 일자별 진도 체크로 누적 지연을 방지하며, <strong style="color:#fff;">완주 자체가 수업 설계 목적</strong>입니다.</p>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span><i class='bx bx-question-mark'></i>"중간에 못 따라가면요?"</span>
+          <i class='bx bx-chevron-down faq-icon'></i>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>18일 전체가 '게임 1편 완성'에서 역산된 커리큘럼입니다. 일자별 진도 체크로 누적 지연을 방지하며, <strong>완주 자체가 수업 설계 목적</strong>입니다.</p>
+          </div>
+        </div>
       </div>
-      <div style="padding: 1.5rem 1.6rem; background: rgba(255,255,255,0.025); border-radius: 14px; border: 1px solid rgba(255,255,255,0.05);">
-        <p style="color: #fff; font-weight: 600; margin: 0 0 0.7rem 0; font-size: 1rem;"><i class='bx bx-question-mark' style="color: var(--accent); margin-right: 0.3rem;"></i>"수업 끝난 뒤에도 혼자 만들 수 있나요?"</p>
-        <p style="color: var(--text-muted); font-size: 0.93rem; line-height: 1.7; margin: 0;"><strong style="color:#fff;">이 수업의 핵심 목표가 그것입니다.</strong> Unity · Cursor · Stable Diffusion · GitHub 개발 환경이 그대로 남고, 수업에서 만든 프로젝트를 기반으로 자신의 기획을 구현하거나 다른 장르 · 팀 프로젝트로 확장할 수 있습니다.</p>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span><i class='bx bx-question-mark'></i>"수업 끝난 뒤에도 혼자 만들 수 있나요?"</span>
+          <i class='bx bx-chevron-down faq-icon'></i>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p><strong>이 수업의 핵심 목표가 그것입니다.</strong> Unity · Cursor · Stable Diffusion · GitHub 개발 환경이 그대로 남고, 수업에서 만든 프로젝트를 기반으로 자신의 기획을 구현하거나 다른 장르 · 팀 프로젝트로 확장할 수 있습니다.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -716,28 +779,28 @@
     <div class="info-bar-inner glass-card">
       <h3 class="gradient-text">수업 안내</h3>
       <div class="info-grid">
-        <div class="info-item">
+        <div class="info-item spotlight">
           <i class='bx bx-calendar-alt'></i>
           <div>
             <strong>수업 기간</strong>
             <span>2달 과정 (한 달에 9일 수업)</span>
           </div>
         </div>
-        <div class="info-item">
+        <div class="info-item spotlight">
           <i class='bx bx-time-five'></i>
           <div>
             <strong>수업 시간</strong>
             <span>회당 2시간 · 총 36시간</span>
           </div>
         </div>
-        <div class="info-item">
+        <div class="info-item spotlight">
           <i class='bx bx-check-shield'></i>
           <div>
             <strong>수업 결과물</strong>
             <span>완성된 디펜스 게임 1편 (WebGL + PC)</span>
           </div>
         </div>
-        <div class="info-item">
+        <div class="info-item spotlight">
           <i class='bx bx-user-check'></i>
           <div>
             <strong>대상</strong>
@@ -758,17 +821,25 @@
     <p>&copy; 2026 AI GameBuilder. All rights reserved.</p>
   </footer>
 
+  <!-- 맨 위로 이동 버튼 -->
+  <button class="back-to-top" id="backToTop" aria-label="맨 위로 이동">
+    <i class='bx bx-up-arrow-alt'></i>
+  </button>
+
   <!-- ═══════════════════════════════════════ -->
-  <!-- 탭 전환 JavaScript -->
+  <!-- 인터랙션 JavaScript -->
   <!-- ═══════════════════════════════════════ -->
   <script>
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
     // 탭 전환 기능
     document.querySelectorAll('.tab-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         // 모든 탭 버튼과 콘텐츠 비활성화
         document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
         document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-        
+
         // 클릭된 탭 활성화
         btn.classList.add('active');
         const target = document.getElementById(btn.dataset.target);
@@ -780,19 +851,107 @@
       });
     });
 
-    // 헤더 스크롤 효과
+    // 헤더 스크롤 효과 + 스크롤 진행바 + 맨 위로 버튼 (단일 스크롤 핸들러로 통합)
+    const headerEl = document.querySelector('.glass-header');
+    const progressBarEl = document.getElementById('scrollProgressBar');
+    const backToTopEl = document.getElementById('backToTop');
+    let ticking = false;
+
+    // ── 커리큘럼 타임라인 스크롤 진행 라인 ──
+    const timelineWrap = document.getElementById('timelineWrap');
+    const timelineFill = document.getElementById('timelineFill');
+    const stepCards = document.querySelectorAll('.step-card');
+    function updateTimelineProgress() {
+      if (!timelineWrap) return;
+      const rect = timelineWrap.getBoundingClientRect();
+      const viewportCenter = window.innerHeight * 0.65;
+      const total = rect.height + viewportCenter;
+      const traveled = viewportCenter - rect.top;
+      const pct = Math.min(1, Math.max(0, traveled / total));
+      timelineFill.style.width = (pct * 100) + '%';
+      const activeCount = Math.round(pct * stepCards.length);
+      stepCards.forEach((card, i) => card.classList.toggle('is-active', i < activeCount));
+    }
+
+    function onScroll() {
+      const scrollY = window.scrollY;
+      headerEl.classList.toggle('scrolled', scrollY > 50);
+      backToTopEl.classList.toggle('visible', scrollY > 600);
+
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollY / docHeight) * 100 : 0;
+      progressBarEl.style.width = pct + '%';
+
+      updateTimelineProgress();
+      ticking = false;
+    }
     window.addEventListener('scroll', () => {
-      const header = document.querySelector('.glass-header');
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
+      if (!ticking) {
+        requestAnimationFrame(onScroll);
+        ticking = true;
       }
+    });
+    onScroll();
+
+    backToTopEl.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
+
+    // ── 커서 스포트라이트 (호버 가능한 데스크톱 전용) ──
+    const cursorGlow = document.getElementById('cursorGlow');
+    if (canHover && !reduceMotion) {
+      window.addEventListener('mousemove', (e) => {
+        cursorGlow.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+        cursorGlow.style.opacity = '1';
+      });
+      document.addEventListener('mouseleave', () => { cursorGlow.style.opacity = '0'; });
+    } else if (cursorGlow) {
+      cursorGlow.style.display = 'none';
+    }
+
+    // ── 카드 스포트라이트 호버 효과 (이벤트 위임) ──
+    if (canHover) {
+      document.addEventListener('mousemove', (e) => {
+        const card = e.target.closest('.spotlight');
+        if (!card) return;
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty('--mx', (e.clientX - rect.left) + 'px');
+        card.style.setProperty('--my', (e.clientY - rect.top) + 'px');
+      });
+    }
+
+    // ── 매그네틱 버튼 효과 ──
+    if (canHover && !reduceMotion) {
+      document.querySelectorAll('.magnetic').forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+          const rect = btn.getBoundingClientRect();
+          const x = (e.clientX - rect.left - rect.width / 2) * 0.35;
+          const y = (e.clientY - rect.top - rect.height / 2) * 0.35;
+          btn.style.transform = `translate(${x}px, ${y}px) scale(1.04)`;
+        });
+        btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+      });
+    }
+
+    // ── FAQ 아코디언 ──
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const item = question.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(openItem => {
+          if (openItem !== item) {
+            openItem.classList.remove('open');
+            openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+          }
+        });
+        item.classList.toggle('open', !isOpen);
+        question.setAttribute('aria-expanded', String(!isOpen));
+      });
     });
 
     // ── 스크롤 리빌 애니메이션 (IntersectionObserver 기반) ──
     // 스크립트가 body 끝에서 동기 실행되므로 초기 페인트 직전에 reveal 클래스를 붙여 FOUC 방지
-    const revealSelectors = ['.snippet-card', '.stat-item', '.step-card', '.skill-card', '.comparison-block', '.career-item', '.tab-hero-banner', '.detail-item'];
+    const revealSelectors = ['.bento-item', '.stat-item', '.step-card', '.skill-card', '.comparison-block', '.career-item', '.tab-hero-banner', '.detail-item', '.faq-item'];
     revealSelectors.forEach(sel => {
       document.querySelectorAll(sel).forEach((el, i) => {
         el.classList.add('reveal');
