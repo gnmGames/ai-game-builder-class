@@ -245,6 +245,40 @@ h1,h2,h3,h4,h5,h6 { font-family: var(--font-heading); letter-spacing: -0.02em; f
 .detail-image-bar:hover img { filter:brightness(1.05); transform:scale(1.04); }
 
 /* ═══════════════════════════════════════ */
+/* ───── Free Project Block (자유 기획 제작 단계) ───── */
+/* ═══════════════════════════════════════ */
+.free-project-block {
+  margin-top: 3rem; padding: 2.5rem; border-radius: 18px;
+  background: linear-gradient(160deg, rgba(0,228,255,0.06), rgba(255,75,145,0.04));
+  border: 1px solid rgba(0,228,255,0.18);
+}
+.free-project-header { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.2rem; }
+.free-project-header i { margin-top: 0.1rem; }
+.free-project-header i { font-size: 2.2rem; color: var(--accent); flex-shrink: 0; }
+.free-project-header h5 { font-size: 1.3rem; color: #fff; margin-bottom: 0.2rem; }
+.free-project-header span { font-size: 0.85rem; color: var(--accent); font-weight: 600; letter-spacing: 0.02em; }
+.free-project-block > p { color: var(--text-main); font-size: 0.98rem; line-height: 1.8; margin-bottom: 1.8rem; }
+.free-project-block > p strong { color: var(--accent); }
+.free-project-steps { list-style: none; padding: 0; margin: 0 0 1.5rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+.free-project-steps li { display: flex; flex-direction: column; gap: 0.5rem; padding: 1.2rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; transition: background var(--transition-fast), border-color var(--transition-fast); }
+.free-project-steps li:hover { background: rgba(255,255,255,0.06); border-color: rgba(0,228,255,0.3); }
+.fp-step { display: inline-block; align-self: flex-start; padding: 0.2rem 0.6rem; background: rgba(0,228,255,0.15); color: var(--accent); border-radius: 6px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em; }
+.free-project-steps h6 { font-size: 1rem; color: #fff; margin: 0; }
+.free-project-steps p { font-size: 0.85rem; color: var(--text-muted); margin: 0; line-height: 1.6; }
+.free-project-note { font-size: 0.85rem; color: var(--text-muted); opacity: 0.85; margin: 0; }
+
+/* ═══════════════════════════════════════ */
+/* ───── Prep List (수강 전 준비물) ───── */
+/* ═══════════════════════════════════════ */
+.prep-list { margin-top: 2rem; padding: 2rem; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; }
+.prep-list h4 { font-size: 1.1rem; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; color: #fff; }
+.prep-list h4 i { color: var(--secondary); font-size: 1.3rem; }
+.prep-list ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.8rem 1.5rem; }
+.prep-list li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.92rem; color: var(--text-main); line-height: 1.6; }
+.prep-list li i { color: var(--green); font-size: 1.1rem; flex-shrink: 0; margin-top: 0.15rem; }
+.prep-list li strong { color: #fff; }
+
+/* ═══════════════════════════════════════ */
 /* ───── Info Bar ───── */
 /* ═══════════════════════════════════════ */
 .info-bar { padding: 3rem 5% 5rem; max-width: 1100px; margin: 0 auto; }
