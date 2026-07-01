@@ -1022,6 +1022,14 @@
     <p>&copy; 2026 AI GameBuilder. All rights reserved.</p>
   </footer>
 
+  <!-- 이미지 확대 보기 -->
+  <div class="image-lightbox" id="imageLightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="이미지 확대 보기">
+    <button class="image-lightbox-close" type="button" aria-label="확대 이미지 닫기">
+      <i class='bx bx-x'></i>
+    </button>
+    <img class="image-lightbox-content" id="imageLightboxContent" alt="">
+  </div>
+
   <!-- 맨 위로 이동 버튼 -->
   <button class="back-to-top" id="backToTop" aria-label="맨 위로 이동">
     <i class='bx bx-up-arrow-alt'></i>
@@ -1033,6 +1041,51 @@
   <script>
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    // 콘텐츠 이미지 확대 보기
+    const imageLightbox = document.getElementById('imageLightbox');
+    const imageLightboxContent = document.getElementById('imageLightboxContent');
+    const imageLightboxClose = imageLightbox.querySelector('.image-lightbox-close');
+    const zoomableImages = document.querySelectorAll('.showcase-icon, .detail-image-bar img, .fp-stage-image img');
+    let lastFocusedImage = null;
+
+    function openImageLightbox(image) {
+      lastFocusedImage = image;
+      imageLightboxContent.src = image.currentSrc || image.src;
+      imageLightboxContent.alt = image.alt;
+      imageLightbox.classList.add('is-open');
+      imageLightbox.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('lightbox-open');
+      imageLightboxClose.focus();
+    }
+
+    function closeImageLightbox() {
+      if (!imageLightbox.classList.contains('is-open')) return;
+      imageLightbox.classList.remove('is-open');
+      imageLightbox.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('lightbox-open');
+      imageLightboxContent.removeAttribute('src');
+      if (lastFocusedImage) lastFocusedImage.focus();
+    }
+
+    zoomableImages.forEach(image => {
+      image.classList.add('zoomable-image');
+      image.setAttribute('tabindex', '0');
+      image.setAttribute('role', 'button');
+      image.setAttribute('aria-label', `${image.alt} 크게 보기`);
+      image.addEventListener('click', () => openImageLightbox(image));
+      image.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openImageLightbox(image);
+        }
+      });
+    });
+
+    imageLightbox.addEventListener('click', closeImageLightbox);
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') closeImageLightbox();
+    });
 
     // 탭 전환 기능
     document.querySelectorAll('.tab-btn').forEach(btn => {
